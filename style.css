@@ -1,0 +1,175 @@
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            background: #5e5d5d;
+        }
+
+        .header {
+            background: #b600a7;
+            color: #ffff;
+            padding: 20px;
+        }
+
+        .header h1 {
+            margin-bottom: 8px;
+        }
+
+        .header nav a {
+            color: #ffff;
+            margin-right: 16px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .main-content {
+            background: #ffff;
+            padding: 40px;
+            width: 70%;
+        }
+        .sidebar {
+            color: #ffff;
+            padding: 40px;
+            width: 30%;
+        }
+
+        .blocks {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .qw {
+            width: 45%;
+            margin: 8px;
+            padding: 20px;
+            border: 2px solid #2b00ff;
+            color: #ffff;
+        }
+
+        .qw:nth-child(1) { background: red; border-color: green;}
+        .qw:nth-child(2) { background: green; border-color: yellow;}
+        .qw:nth-child(3) { background: yellow; border-color:blue; color: black;}
+        .qw:nth-child(4) { background: blue; border-color:red ;}
+
+        .main-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            padding-top: 16px;
+            padding-bottom: 0px;
+        }
+        
+        .footer {
+            padding-top: 0px;
+            padding: 16px;
+            text-align: center;
+            background: #222;
+            color: #ffff;
+        }
+
+        
+
+        /* Мобилки (все до 600px) */
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+
+            .header {
+                padding: 10px;
+            }
+
+            .main-content,
+            .sidebar {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .qw {
+                width: 100%;
+                margin: 8px 0;
+            }
+        }
+
+        /* Планшеты в портретной ориентации (768px–959px) */
+        @media only screen and (min-width: 768px) and (max-width: 959px) {
+            body {
+                font-size: 16px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .main-content {
+                padding: 20px;
+                width: 70%;
+            }
+
+            .sidebar {
+                padding: 20px;
+                width: 30%;
+            }
+        }
+
+        /* Ноутбуки и мониторы (1280px–1919px) */
+        @media only screen and (min-width: 1280px) and (max-width: 1919px) {
+            body {
+                font-size: 18px;
+            }
+
+            .header {
+                padding: 30px;
+            }
+
+            .main-content {
+                padding: 30px;
+                width: 65%;
+            }
+
+            .sidebar {
+                padding: 30px;
+                width: 35%;
+            }
+        }
+
+        /* Большие мониторы и телевизоры (от 2400px) */
+        @media only screen and (min-width: 2400px) {
+            body {
+                font-size: 50px;
+            }
+
+            .header {
+                padding: 40px;
+            }
+
+            .main-content {
+                padding: 40px;
+                width: 70%;
+                margin: 0 auto;
+            }
+
+            .sidebar {
+                padding: 40px;
+                width: 30%;
+            }
+
+            .main-content img {
+            width: 50%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        }
