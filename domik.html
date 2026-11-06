@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хехе Домик</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Вау тут тоже Хедер</h1>
+        <nav>
+            <a href="./index.html"><i class="fa-solid fa-info"></i> Не домик</a>
+            <a href="./domik.html" class="current"><i class="fa-solid fa-house"></i> Хехе домик</a>
+            <a href="./man.html"><i class="fa-solid fa-user"></i> Man</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i> Письмо</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="main-content main-full">
+            <h2>Домик моей мечты</h2>
+            <p id="house-text">Ну он ведь реально крутой!</p>
+
+            <div class="house-row">
+                <img id="house" src="img/domik.jpg" srcset="img/domik.jpg 1x, img/domik2x.jpg 2x" alt="белый домик">
+
+                <div class="button">
+                    <button class="qb active" type="button"
+                        title="Белый"
+                        data-src="img/domik.jpg"
+                        data-srcset="img/domik.jpg 1x, img/domik2x.jpg 2x"
+                        data-alt="белый доми"
+                        data-text="Ну он ведь реально крутой!"><span class="qb-label">Белый</span></button>
+                    <button class="qb" type="button"
+                        title="Голубой"
+                        data-src="img/domik-blue.jpg"
+                        data-alt="голубой дом"
+                        data-text="Голубой..."><span class="qb-label">Голубой</span></button>
+                    <button class="qb" type="button"
+                        title="Избушка"
+                        data-src="img/domik-wood.jpg"
+                        data-alt="древесный дом"
+                        data-text="Дерево это круто!"><span class="qb-label">Древесный</span></button>
+                    <button class="qb" type="button"
+                        title="Ночной"
+                        data-src="img/domik-night.jpg"
+                        data-alt="ночной дом"
+                        data-text="Всем спать!"><span class="qb-label">Ночной</span></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">И даже футер</footer>
+
+    <script>
+        const house = document.getElementById('house');
+        const houseText = document.getElementById('house-text');
+        const buttons = document.querySelectorAll('.qb');
+
+        buttons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                house.src = btn.dataset.src;
+                if (btn.dataset.srcset) {
+                    house.srcset = btn.dataset.srcset;
+                } else {
+                    house.removeAttribute('srcset');
+                }
+                house.alt = btn.dataset.alt;
+                houseText.textContent = btn.dataset.text;
+
+                buttons.forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
